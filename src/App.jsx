@@ -14,8 +14,12 @@ import TimerCounter from './components/TimerCounter.jsx';
 import InputFocus from './components/InputFocus.jsx';
 import VariantCounter from './components/VariantCounter.jsx';
 import ChartComponent from './components/ChartComponent.jsx';
+import { ThemeContext } from './components/ThemeContext.jsx';
+import Page from './components/Page.jsx';
 
 function App() {
+  const theme = 'dark';
+
   return (
     <div>
       <SimpleTest/>
@@ -27,6 +31,9 @@ function App() {
       <InputFocus/>
       <VariantCounter/>
       <ChartComponent/>
+      <ThemeContext.Provider value={theme}>
+        <Page/>
+      </ThemeContext.Provider>
 
       <BrowserRouter>
         <nav style={{ padding: 8 }}>
