@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url, { defaultValue = null, enabled = true } = {}) => {
+const useFetch = (url, { defaultValue = null } = {}) => {
   const [data, setData] = useState(defaultValue);
-  const [loading, setLoading] = useState(enabled);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
   useEffect(() => {
-    if (!enabled || !url) {
+    if (!url) {
       setLoading(false);
       return;
     }
@@ -40,7 +40,7 @@ const useFetch = (url, { defaultValue = null, enabled = true } = {}) => {
     return () => {
       aborted = true;
     };
-  }, [url, enabled]);
+  }, [url]);
 
   return { data, loading, error, setData };
 };

@@ -8,7 +8,7 @@ const TaskEdit = () => {
   const navigate = useNavigate();
   const { data: task, loading, error } = useFetch(
     id ? `http://localhost:8080/tasks/${id}` : null,
-    { defaultValue: null, enabled: !!id }
+    { defaultValue: null }
   );
 
   const handleUpdate = async (updated) => {

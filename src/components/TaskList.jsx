@@ -18,7 +18,7 @@ const TaskList = () => {
       setTasks(prev => prev.filter(task => task.id !== taskId));
       setActionError(undefined);
     } catch (err) {
-      setActionError("삭제 실패");
+      setActionError("삭제 실패", err);
     }
   };
 
